@@ -1,0 +1,15 @@
+C:\Users\admin\source\repos\RMZCorp\RMZCorps.Domain.Contracts\bin\Debug\net5.0\RMZCorps.Domain.Contracts.deps.json
+C:\Users\admin\source\repos\RMZCorp\RMZCorps.Domain.Contracts\bin\Debug\net5.0\RMZCorps.Domain.Contracts.runtimeconfig.json
+C:\Users\admin\source\repos\RMZCorp\RMZCorps.Domain.Contracts\bin\Debug\net5.0\RMZCorps.Domain.Contracts.runtimeconfig.dev.json
+C:\Users\admin\source\repos\RMZCorp\RMZCorps.Domain.Contracts\bin\Debug\net5.0\RMZCorps.Domain.Contracts.dll
+C:\Users\admin\source\repos\RMZCorp\RMZCorps.Domain.Contracts\bin\Debug\net5.0\ref\RMZCorps.Domain.Contracts.dll
+C:\Users\admin\source\repos\RMZCorp\RMZCorps.Domain.Contracts\bin\Debug\net5.0\RMZCorps.Domain.Contracts.pdb
+C:\Users\admin\source\repos\RMZCorp\RMZCorps.Domain.Contracts\obj\Debug\net5.0\RMZCorps.Domain.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\source\repos\RMZCorp\RMZCorps.Domain.Contracts\obj\Debug\net5.0\RMZCorps.Domain.Contracts.AssemblyInfoInputs.cache
+C:\Users\admin\source\repos\RMZCorp\RMZCorps.Domain.Contracts\obj\Debug\net5.0\RMZCorps.Domain.Contracts.AssemblyInfo.cs
+C:\Users\admin\source\repos\RMZCorp\RMZCorps.Domain.Contracts\obj\Debug\net5.0\RMZCorps.Domain.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\RMZCorp\RMZCorps.Domain.Contracts\obj\Debug\net5.0\RMZCorps.Domain.Contracts.dll
+C:\Users\admin\source\repos\RMZCorp\RMZCorps.Domain.Contracts\obj\Debug\net5.0\ref\RMZCorps.Domain.Contracts.dll
+C:\Users\admin\source\repos\RMZCorp\RMZCorps.Domain.Contracts\obj\Debug\net5.0\RMZCorps.Domain.Contracts.pdb
+C:\Users\admin\source\repos\RMZCorp\RMZCorps.Domain.Contracts\obj\Debug\net5.0\RMZCorps.Domain.Contracts.genruntimeconfig.cache
+C:\Users\admin\source\repos\RMZCorp\RMZCorps.Domain.Contracts\obj\Debug\net5.0\RMZCorps.Domain.Contracts.csproj.AssemblyReference.cache
