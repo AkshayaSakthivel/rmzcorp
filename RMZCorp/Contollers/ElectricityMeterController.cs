@@ -9,7 +9,7 @@ namespace RMZCorp.Contollers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MeterInfoController : ControllerBase
+    public class ElectricityMeterController : ControllerBase
     {
     }
 }

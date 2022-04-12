@@ -13,11 +13,9 @@ namespace RMZCorp.DataAccess.SQL.DataModels
         public decimal WattageRating { get; set; }
         public decimal OperationalHours { get; set; }
         public decimal TotalUnits { get; set; }
-        public decimal ElecticityConsumed { get; set; }
-        public decimal ElecticityConsumedCost { get; set; }
+        public decimal DailyElecticityConsumed { get; set; }
+        public decimal DailyElecticityConsumedCost { get; set; }
         public DateTime MeterStartDate { get; set; }
-        public DateTime BillingStartDate { get; set; }
-        public DateTime BillingEndDate { get; set; }
-
+       
     }
 }
