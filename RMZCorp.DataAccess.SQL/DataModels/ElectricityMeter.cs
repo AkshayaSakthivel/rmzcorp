@@ -8,7 +8,7 @@ namespace RMZCorp.DataAccess.SQL.DataModels
     public class ElectricityMeter
     {
         public int Id { get; set; }
-        public int SerialNumber { get; set; }
+        public Guid SerialNumber { get; set; }
         public string MeasuringUnit { get; set; }
         public decimal WattageRating { get; set; }
         public decimal OperationalHours { get; set; }

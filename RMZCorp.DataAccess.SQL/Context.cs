@@ -11,13 +11,13 @@ namespace RMZCorp.DataAccess.SQL
 
         }
 
-        DbSet<City> Cities { get; set; }
-        DbSet<Facility> Facilities { get; set; }
-        DbSet<Building> Buildings { get; set; }
-        DbSet<Floor> Floors { get; set; }
-        DbSet<Zone> Zones { get; set; }
-        DbSet<ElectricityMeter> ElectricityMeters { get; set; }
-        DbSet<WaterMeter> WaterMeters { get; set; }
+        public DbSet<City> Cities { get; set; }
+        public DbSet<Facility> Facilities { get; set; }
+        public DbSet<Building> Buildings { get; set; }
+        public DbSet<Floor> Floors { get; set; }
+        public DbSet<Zone> Zones { get; set; }
+        public DbSet<ElectricityMeter> ElectricityMeters { get; set; }
+        public DbSet<WaterMeter> WaterMeters { get; set; }
 
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{

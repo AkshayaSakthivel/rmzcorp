@@ -396,3 +396,13 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+#RMZCorp project bin and obj files
+RMZCorp.DataAccess.SQL/bin/
+RMZCorp.DataAccess.SQL/obj/
+RMZCorp.Domain/bin/
+RMZCorp.Domain/obj/
+RMZCorp/bin/
+RMZCorp/obj/
+RMZCorps.Domain.Contracts/bin/
+RMZCorps.Domain.Contracts/obj/

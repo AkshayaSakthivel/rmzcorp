@@ -61,16 +61,10 @@ namespace RMZCorp.DataAccess.SQL.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("BillingEndDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("BillingStartDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<decimal>("ElecticityConsumed")
+                    b.Property<decimal>("DailyElecticityConsumed")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<decimal>("ElecticityConsumedCost")
+                    b.Property<decimal>("DailyElecticityConsumedCost")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("MeasuringUnit")
@@ -109,6 +103,9 @@ namespace RMZCorp.DataAccess.SQL.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int?>("CityId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Code")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")

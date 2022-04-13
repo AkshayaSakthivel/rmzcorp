@@ -28,7 +28,9 @@ namespace RMZCorp
         {
             services.AddRazorPages();
             services.AddControllers();
-            services.AddDbContext<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<Context>(options => 
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
+                x => x.MigrationsAssembly("RMZCorp.DataAccess.SQL")));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "RMZCorp", Version = "v1" });
