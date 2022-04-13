@@ -1,5 +1,5 @@
 ﻿using RMZCorp.DataAccess.SQL.DataModels;
-using RMZCorps.Domain.Contracts.Repository;
+using RMZCorp.DataAccess.SQL.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;

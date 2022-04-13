@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RMZCorps.Domain.Contracts.Entities
+namespace RMZCorps.Domain.Contracts
 {
     public interface IElectricityMeterEntity
     {

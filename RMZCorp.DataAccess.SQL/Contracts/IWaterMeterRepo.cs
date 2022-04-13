@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RMZCorps.Domain.Contracts.Entities
+namespace RMZCorp.DataAccess.SQL.Contracts
 {
-    public interface IWaterMeterEntity
+    public interface IWaterMeterRepo
     {
     }
 }
