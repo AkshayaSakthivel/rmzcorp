@@ -1700,6 +1700,20 @@
         "runtime": {
           "bin/placeholder/RMZCorp.DataAccess.SQL.dll": {}
         }
+      },
+      "RMZCorp.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.15",
+          "RMZCorp.DataAccess.SQL": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/RMZCorp.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RMZCorp.Domain.dll": {}
+        }
       }
     }
   },
@@ -6153,6 +6167,11 @@
       "type": "project",
       "path": "../RMZCorp.DataAccess.SQL/RMZCorp.DataAccess.SQL.csproj",
       "msbuildProject": "../RMZCorp.DataAccess.SQL/RMZCorp.DataAccess.SQL.csproj"
+    },
+    "RMZCorp.Domain/1.0.0": {
+      "type": "project",
+      "path": "../RMZCorp.Domain/RMZCorp.Domain.csproj",
+      "msbuildProject": "../RMZCorp.Domain/RMZCorp.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6164,6 +6183,7 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.15",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.15",
       "RMZCorp.DataAccess.SQL >= 1.0.0",
+      "RMZCorp.Domain >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.3.0"
     ]
   },
@@ -6201,6 +6221,9 @@
           "projectReferences": {
             "C:\\Users\\admin\\source\\repos\\RMZCorp\\RMZCorp.DataAccess.SQL\\RMZCorp.DataAccess.SQL.csproj": {
               "projectPath": "C:\\Users\\admin\\source\\repos\\RMZCorp\\RMZCorp.DataAccess.SQL\\RMZCorp.DataAccess.SQL.csproj"
+            },
+            "C:\\Users\\admin\\source\\repos\\RMZCorp\\RMZCorp.Domain\\RMZCorp.Domain.csproj": {
+              "projectPath": "C:\\Users\\admin\\source\\repos\\RMZCorp\\RMZCorp.Domain\\RMZCorp.Domain.csproj"
             }
           }
         }

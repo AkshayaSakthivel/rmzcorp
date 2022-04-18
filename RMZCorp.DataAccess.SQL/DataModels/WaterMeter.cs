@@ -9,13 +9,12 @@ namespace RMZCorp.DataAccess.SQL.DataModels
     public class WaterMeter
     {
         public int Id { get; set; }
-        public int SerialNumber { get; set; }
+        public Guid SerialNumber { get; set; }
         public decimal RatePerLiter { get; set; }
         public MeasuringUnit Unit { get; set; }
-        public decimal LitersConsumed { get; set; }
-        public decimal ConsumptionCost { get; set; }
-        public DateTime BillingStartDate { get; set; }
-        public DateTime BillingEndDate { get; set; }
+        public decimal LitersConsumedPerDay { get; set; }
+        public decimal DailyConsumptionCost { get; set; }
+        public DateTime ReadingDate { get; set; }
     }
 
     [JsonConverter(typeof(JsonStringEnumConverter))]

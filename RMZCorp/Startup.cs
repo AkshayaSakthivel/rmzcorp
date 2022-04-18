@@ -7,6 +7,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using RMZCorp.DataAccess.SQL;
+using RMZCorp.DataAccess.SQL.Contracts;
+using RMZCorp.DataAccess.SQL.Repository;
+using RMZCorp.Domain.Contracts;
+using RMZCorp.Domain.Entities;
+using RMZCorps.Domain.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,13 +33,20 @@ namespace RMZCorp
         {
             services.AddRazorPages();
             services.AddControllers();
-            services.AddDbContext<Context>(options => 
+            services.AddDbContextPool<Context>(options => 
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
                 x => x.MigrationsAssembly("RMZCorp.DataAccess.SQL")));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "RMZCorp", Version = "v1" });
             });
+
+            services.AddScoped<IElectricityMeterRepo, ElectricityMeterRepo>();
+            services.AddScoped<IWaterMeterRepo, WaterMeterRepo>();
+            services.AddScoped<IMeterRepo, MeterRepo>();
+            services.AddScoped<IElectricityMeterEntity, ElectricityMeterEntity>();
+            services.AddScoped<IWaterMeterEntity, WaterMeterEntity>();
+            services.AddScoped<IMeterEntity, MeterEntity>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

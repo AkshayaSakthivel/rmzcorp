@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RMZCorps.Domain.Contracts.Repository
+namespace RMZCorp.DataAccess.SQL.Contracts
 {
     public interface IElectricityMeterRepo
     {

@@ -5,39 +5,67 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace RMZCorp.DataAccess.SQL.Repository
 {
     public class ElectricityMeterRepo : IElectricityMeterRepo
     {
-        public Task<ElectricityMeter> Add(ElectricityMeter electricityMeter)
+        private readonly Context _sqlContext;
+        public ElectricityMeterRepo(Context sqlContext)
         {
-            throw new NotImplementedException();
+            _sqlContext = sqlContext;
         }
 
-        public Task Delete(int id)
+        public async Task<ElectricityMeter> Add(ElectricityMeter electricityMeter)
         {
-            throw new NotImplementedException();
+            electricityMeter.SerialNumber = Guid.NewGuid();
+            await _sqlContext.ElectricityMeters.AddAsync(electricityMeter);
+             await _sqlContext.SaveChangesAsync();
+            return electricityMeter;
         }
 
-        public Task<List<ElectricityMeter>> GetAll()
+        public async Task Delete(int id)
         {
-            throw new NotImplementedException();
+            var electMeter = await _sqlContext.ElectricityMeters.FindAsync(id);
+            if(electMeter != null)
+            {
+                _sqlContext.ElectricityMeters.Remove(electMeter);
+                await _sqlContext.SaveChangesAsync();
+            }
         }
 
-        public Task<ElectricityMeter> GetById(int id)
+        public async Task<List<ElectricityMeter>> GetAll()
         {
-            throw new NotImplementedException();
+            return await _sqlContext.ElectricityMeters.ToListAsync();
         }
 
-        public Task<ElectricityMeter> GetBySerialNumber(Guid serialNumber)
+        public async Task<ElectricityMeter> GetById(int id)
         {
-            throw new NotImplementedException();
+            return await _sqlContext.ElectricityMeters.SingleOrDefaultAsync(x => x.Id == id);
         }
 
-        public Task<ElectricityMeter> Update(ElectricityMeter electricityMeter)
+        public async Task<ElectricityMeter> GetBySerialNumber(Guid serialNumber)
         {
-            throw new NotImplementedException();
+            return await _sqlContext.ElectricityMeters.SingleOrDefaultAsync(x => x.SerialNumber == serialNumber);
+        }
+
+        public async Task<ElectricityMeter> Update(ElectricityMeter electricityMeter)
+        {
+            var electMeter = await _sqlContext.ElectricityMeters.FindAsync(electricityMeter.Id);
+            if (electMeter != null)
+            {
+                electMeter.MeasuringUnit = electricityMeter.MeasuringUnit;
+                electMeter.WattageRating = electricityMeter.WattageRating;
+                electMeter.OperationalHoursPerDay = electricityMeter.OperationalHoursPerDay;
+                electMeter.ElecticityConsumedPerHour = electricityMeter.ElecticityConsumedPerHour;
+                electMeter.DailyElecticityConsumedCost = electricityMeter.DailyElecticityConsumedCost;
+                electricityMeter.ReadingDate = DateTime.Now;
+                _sqlContext.ElectricityMeters.Update(electMeter);
+                await _sqlContext.SaveChangesAsync();
+            }
+            return electricityMeter;
+            
         }
     }
 }

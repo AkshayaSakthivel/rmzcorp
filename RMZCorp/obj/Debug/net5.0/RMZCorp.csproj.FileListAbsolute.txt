@@ -391,3 +391,5 @@ C:\Users\admin\source\repos\RMZCorp\RMZCorp\obj\Debug\net5.0\RMZCorp.dll
 C:\Users\admin\source\repos\RMZCorp\RMZCorp\obj\Debug\net5.0\ref\RMZCorp.dll
 C:\Users\admin\source\repos\RMZCorp\RMZCorp\obj\Debug\net5.0\RMZCorp.pdb
 C:\Users\admin\source\repos\RMZCorp\RMZCorp\obj\Debug\net5.0\RMZCorp.genruntimeconfig.cache
+C:\Users\admin\source\repos\RMZCorp\RMZCorp\bin\Debug\net5.0\RMZCorp.Domain.dll
+C:\Users\admin\source\repos\RMZCorp\RMZCorp\bin\Debug\net5.0\RMZCorp.Domain.pdb

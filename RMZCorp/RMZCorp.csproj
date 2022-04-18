@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RMZCorp.DataAccess.SQL\RMZCorp.DataAccess.SQL.csproj" />
+    <ProjectReference Include="..\RMZCorp.Domain\RMZCorp.Domain.csproj" />
   </ItemGroup>
 
 </Project>

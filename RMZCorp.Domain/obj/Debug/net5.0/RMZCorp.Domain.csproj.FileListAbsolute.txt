@@ -13,3 +13,6 @@ C:\Users\admin\source\repos\RMZCorp\RMZCorp.Domain\obj\Debug\net5.0\ref\RMZCorp.
 C:\Users\admin\source\repos\RMZCorp\RMZCorp.Domain\obj\Debug\net5.0\RMZCorp.Domain.pdb
 C:\Users\admin\source\repos\RMZCorp\RMZCorp.Domain\obj\Debug\net5.0\RMZCorp.Domain.genruntimeconfig.cache
 C:\Users\admin\source\repos\RMZCorp\RMZCorp.Domain\obj\Debug\net5.0\RMZCorp.Domain.csproj.AssemblyReference.cache
+C:\Users\admin\source\repos\RMZCorp\RMZCorp.Domain\bin\Debug\net5.0\RMZCorp.DataAccess.SQL.dll
+C:\Users\admin\source\repos\RMZCorp\RMZCorp.Domain\bin\Debug\net5.0\RMZCorp.DataAccess.SQL.pdb
+C:\Users\admin\source\repos\RMZCorp\RMZCorp.Domain\obj\Debug\net5.0\RMZCorp.Domain.csproj.CopyComplete

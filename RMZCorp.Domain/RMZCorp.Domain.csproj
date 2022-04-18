@@ -12,4 +12,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RMZCorp.DataAccess.SQL\RMZCorp.DataAccess.SQL.csproj" />
+  </ItemGroup>
+
 </Project>
