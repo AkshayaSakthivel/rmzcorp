@@ -21,7 +21,7 @@ namespace RMZCorp.Domain.Entities
         {
             electricityMeter.SerialNumber = Guid.NewGuid();
             electricityMeter.DailyElecticityConsumedCost = electricityMeter.OperationalHoursPerDay * electricityMeter.WattageRating * electricityMeter.ElecticityConsumedPerHour;
-            electricityMeter.TotalUnits += electricityMeter.OperationalHoursPerDay * electricityMeter.ElecticityConsumedPerHour;
+            electricityMeter.TotalUnits += (electricityMeter.OperationalHoursPerDay * electricityMeter.ElecticityConsumedPerHour);
             electricityMeter.MeterStartDate = DateTime.Now;
             return await _electricityMeterRepo.Add(electricityMeter);
         }
@@ -36,9 +36,9 @@ namespace RMZCorp.Domain.Entities
             return await _electricityMeterRepo.GetAll();
         }
 
-        public async Task<ElectricityMeter> GetById(int id)
+        public Task<ElectricityMeter> GetById(int id)
         {
-            return await _electricityMeterRepo.GetById(id);
+            return  _electricityMeterRepo.GetById(id);
         }
 
         public async Task<ElectricityMeter> GetBySerialNumber(Guid serialNumber)
@@ -48,6 +48,8 @@ namespace RMZCorp.Domain.Entities
 
         public async Task<ElectricityMeter> Update(ElectricityMeter electricityMeter)
         {
+            electricityMeter.DailyElecticityConsumedCost = electricityMeter.OperationalHoursPerDay * electricityMeter.WattageRating * electricityMeter.ElecticityConsumedPerHour;
+            electricityMeter.TotalUnits += (electricityMeter.OperationalHoursPerDay * electricityMeter.ElecticityConsumedPerHour);
             return await _electricityMeterRepo.Update(electricityMeter);
         }
     }

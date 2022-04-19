@@ -10,6 +10,11 @@ namespace RMZCorp.DataAccess.SQL.Repository
 {
     public class WaterMeterRepo : IWaterMeterRepo
     {
+        private readonly Context _sqlContext;
+        public WaterMeterRepo(Context sqlContext)
+        {
+            _sqlContext = sqlContext;
+        }
         public Task<WaterMeter> Add(WaterMeter waterMeter)
         {
             throw new NotImplementedException();

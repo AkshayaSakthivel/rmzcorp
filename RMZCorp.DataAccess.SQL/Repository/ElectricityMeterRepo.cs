@@ -19,16 +19,15 @@ namespace RMZCorp.DataAccess.SQL.Repository
 
         public async Task<ElectricityMeter> Add(ElectricityMeter electricityMeter)
         {
-            electricityMeter.SerialNumber = Guid.NewGuid();
             await _sqlContext.ElectricityMeters.AddAsync(electricityMeter);
-             await _sqlContext.SaveChangesAsync();
+            await _sqlContext.SaveChangesAsync();
             return electricityMeter;
         }
 
         public async Task Delete(int id)
         {
             var electMeter = await _sqlContext.ElectricityMeters.FindAsync(id);
-            if(electMeter != null)
+            if (electMeter != null)
             {
                 _sqlContext.ElectricityMeters.Remove(electMeter);
                 await _sqlContext.SaveChangesAsync();
@@ -40,9 +39,9 @@ namespace RMZCorp.DataAccess.SQL.Repository
             return await _sqlContext.ElectricityMeters.ToListAsync();
         }
 
-        public async Task<ElectricityMeter> GetById(int id)
+        public Task<ElectricityMeter> GetById(int id)
         {
-            return await _sqlContext.ElectricityMeters.SingleOrDefaultAsync(x => x.Id == id);
+            return _sqlContext.ElectricityMeters.SingleOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task<ElectricityMeter> GetBySerialNumber(Guid serialNumber)
@@ -65,7 +64,7 @@ namespace RMZCorp.DataAccess.SQL.Repository
                 await _sqlContext.SaveChangesAsync();
             }
             return electricityMeter;
-            
+
         }
     }
 }
