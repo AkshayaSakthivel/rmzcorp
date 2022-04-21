@@ -26,7 +26,7 @@ namespace RMZCorp.DataAccess.SQL.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("FacilityId")
+                    b.Property<int>("FacilityId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -88,7 +88,7 @@ namespace RMZCorp.DataAccess.SQL.Migrations
                     b.Property<decimal>("WattageRating")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int?>("ZoneId")
+                    b.Property<int>("ZoneId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -105,7 +105,7 @@ namespace RMZCorp.DataAccess.SQL.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CityId")
+                    b.Property<int>("CityId")
                         .HasColumnType("int");
 
                     b.Property<string>("Code")
@@ -128,7 +128,7 @@ namespace RMZCorp.DataAccess.SQL.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("BuildingId")
+                    b.Property<int>("BuildingId")
                         .HasColumnType("int");
 
                     b.Property<int>("FloorNumber")
@@ -166,7 +166,7 @@ namespace RMZCorp.DataAccess.SQL.Migrations
                     b.Property<int>("Unit")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ZoneId")
+                    b.Property<int>("ZoneId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -183,7 +183,7 @@ namespace RMZCorp.DataAccess.SQL.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("FloorId")
+                    b.Property<int>("FloorId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -198,44 +198,68 @@ namespace RMZCorp.DataAccess.SQL.Migrations
 
             modelBuilder.Entity("RMZCorp.DataAccess.SQL.DataModels.Building", b =>
                 {
-                    b.HasOne("RMZCorp.DataAccess.SQL.DataModels.Facility", null)
+                    b.HasOne("RMZCorp.DataAccess.SQL.DataModels.Facility", "Facility")
                         .WithMany("Buildings")
-                        .HasForeignKey("FacilityId");
+                        .HasForeignKey("FacilityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Facility");
                 });
 
             modelBuilder.Entity("RMZCorp.DataAccess.SQL.DataModels.ElectricityMeter", b =>
                 {
-                    b.HasOne("RMZCorp.DataAccess.SQL.DataModels.Zone", null)
+                    b.HasOne("RMZCorp.DataAccess.SQL.DataModels.Zone", "Zone")
                         .WithMany("ElectricityMeters")
-                        .HasForeignKey("ZoneId");
+                        .HasForeignKey("ZoneId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Zone");
                 });
 
             modelBuilder.Entity("RMZCorp.DataAccess.SQL.DataModels.Facility", b =>
                 {
-                    b.HasOne("RMZCorp.DataAccess.SQL.DataModels.City", null)
+                    b.HasOne("RMZCorp.DataAccess.SQL.DataModels.City", "City")
                         .WithMany("Facilities")
-                        .HasForeignKey("CityId");
+                        .HasForeignKey("CityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("City");
                 });
 
             modelBuilder.Entity("RMZCorp.DataAccess.SQL.DataModels.Floor", b =>
                 {
-                    b.HasOne("RMZCorp.DataAccess.SQL.DataModels.Building", null)
+                    b.HasOne("RMZCorp.DataAccess.SQL.DataModels.Building", "Building")
                         .WithMany("Floors")
-                        .HasForeignKey("BuildingId");
+                        .HasForeignKey("BuildingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Building");
                 });
 
             modelBuilder.Entity("RMZCorp.DataAccess.SQL.DataModels.WaterMeter", b =>
                 {
-                    b.HasOne("RMZCorp.DataAccess.SQL.DataModels.Zone", null)
+                    b.HasOne("RMZCorp.DataAccess.SQL.DataModels.Zone", "Zone")
                         .WithMany("WaterMeters")
-                        .HasForeignKey("ZoneId");
+                        .HasForeignKey("ZoneId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Zone");
                 });
 
             modelBuilder.Entity("RMZCorp.DataAccess.SQL.DataModels.Zone", b =>
                 {
-                    b.HasOne("RMZCorp.DataAccess.SQL.DataModels.Floor", null)
+                    b.HasOne("RMZCorp.DataAccess.SQL.DataModels.Floor", "Floor")
                         .WithMany("Zones")
-                        .HasForeignKey("FloorId");
+                        .HasForeignKey("FloorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Floor");
                 });
 
             modelBuilder.Entity("RMZCorp.DataAccess.SQL.DataModels.Building", b =>

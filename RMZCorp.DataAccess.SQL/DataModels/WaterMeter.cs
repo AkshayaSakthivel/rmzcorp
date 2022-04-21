@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
@@ -14,6 +15,9 @@ namespace RMZCorp.DataAccess.SQL.DataModels
         public MeasuringUnit Unit { get; set; }
         public decimal LitersConsumedPerDay { get; set; }
         public decimal DailyConsumptionCost { get; set; }
+        [ForeignKey("ZoneId")]
+        public Zone Zone { get; set; }
+        public int ZoneId { get; set; }
         public DateTime ReadingDate { get; set; }
     }
 

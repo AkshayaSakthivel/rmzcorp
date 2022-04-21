@@ -17,6 +17,6 @@ namespace RMZCorp.DataAccess.SQL.DataModels
     {
         Zone,
         Building,
-        Facility
+        Floor
     }
 }
